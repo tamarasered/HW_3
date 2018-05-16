@@ -9,6 +9,48 @@ df <- read.csv('clean_data.csv')
 ####################################
 
 ## start writing your R code from here
+library(ggplot2)
+
+#Part B: 1
+# Creating a vector LTR
+LTR <- df$Likelihood_Recommend_H
+
+#Creating types of NPS
+promoters <- (sum(LTR > 8))/length(LTR)*100
+passives <- (sum(LTR > 6 & LTR<9))/length(LTR)*100
+detractors <- (sum(LTR < 7))/length(LTR)*100
+
+#Creating vectors for the NPS types and values  
+Type<- c(promoters, passives, detractors)
+Names <- c("promoters", "passives", "detractors")
+
+#Generating a bar chart
+MyPlot <- ggplot() + geom_bar(aes(x=Names,y=Type), stat="identity") + ggtitle(paste("Overall NPS value:", round(mean(Type)))) + xlab("NPS types") + ylab("NPS type values")
+
+#Generating PNG file
+png(filename="bar_NPS.png")
+MyPlot
+dev.off()
+
+
+
+#Part B: 2
+#Creating a new dataframe by omitting NAs from 'hotel condition' column
+hc <- df[!is.na(df$Condition_Hotel_H),] 
+
+#Getting mean values of LTR for each value of the 'hotel condition' and storing in a new dataframe
+meanLTR <- aggregate(.~Condition_Hotel_H, data=hc, mean)
+
+#Generating a bar chart
+MeanLTRPlot <- ggplot() + geom_bar(aes(x=meanLTR$Condition_Hotel_H,y=meanLTR$Likelihood_Recommend_H), stat="identity") + xlab("hotel condition") + ylab("LTR")
+
+#Generating PNG file
+png(filename="bar_LTR.png")
+MeanLTRPlot
+dev.off()
+
+
+#Part G: 1
 
 ## end your R code and logic 
 
