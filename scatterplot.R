@@ -14,8 +14,9 @@ df <- read.csv('clean_data.csv')
 
 ####################################
 ##### write output file ############
-# add your R code to write scat_hc_LTR.png
+# add your R code to write scat_hc_sc.png
 ####################################
+
 
 
 
