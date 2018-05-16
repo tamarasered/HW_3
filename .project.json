@@ -59,6 +59,9 @@
         },
         {
             "name": "map_usa_LTR.png"
+        },
+        {
+            "name": "map_usa_LTR_FL_TN_VT.png"
         }
     ],
     "edges": [
