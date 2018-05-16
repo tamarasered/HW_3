@@ -49,6 +49,7 @@ png(filename="bar_LTR.png")
 MeanLTRPlot
 dev.off()
 
+##################################################
 
 #Part G: 1
 library(dplyr)
@@ -80,7 +81,7 @@ NPSmean <- NPSmean[names(NPSmean) %in% stateabb]
 NPSmeans <- data.frame(state=(names(NPSmean)), LTR=NPSmean)
 
 #Generating a bar chart
-MeanNPSPlot <- ggplot(NPSmeans, aes(x=state,y=LTR)) + geom_bar(stat="identity") + xlab("states") + ylab("mean NPS")
+MeanNPSPlot <- ggplot(NPSmeans, aes(x=state,y=LTR)) + geom_bar(stat="identity", width=0.8) + xlab("states") + ylab("mean NPS")
 
 #Generating PNG file
 png(filename="mean_NPSbystate.png", width=800, height=600)
@@ -90,7 +91,7 @@ dev.off()
 #Part G: 2
 
 #Generating a sorted bar chart
-MeanNPSPlotArr <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR)) + geom_bar(stat="identity") + xlab("states") + ylab("mean NPS")
+MeanNPSPlotArr <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR)) + geom_bar(stat="identity", width=0.8) + xlab("states") + ylab("mean NPS")
 
 #Generating PNG file
 png(filename="mean_NPSbystate_sorted.png", width=800, height=600)
@@ -100,7 +101,7 @@ dev.off()
 #Part G: 3
 
 #Generating a sorted and colored bar chart
-MeanNPSPlotArrCol <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR, fill=as.factor(LTR))) + geom_bar(stat="identity", width=0.8, , show.legend=FALSE) + xlab("states") + ylab("mean NPS")
+MeanNPSPlotArrCol <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR, fill=as.factor(LTR))) + geom_bar(stat="identity", width=0.8, show.legend=FALSE) + xlab("states") + ylab("mean NPS")
 MeanNPSPlotArrCol <- MeanNPSPlotArrCol + scale_shape_manual(values = 0:length(unique(NPSmeans$state)))
 
 #Generating PNG file
