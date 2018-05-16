@@ -72,6 +72,10 @@
         {
             "source": "clean_data.csv",
             "target": "barchart.R"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_LTR.png"
         }
     ]
 }
