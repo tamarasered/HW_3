@@ -59,6 +59,9 @@
         },
         {
             "name": "mean_NPSbystate_color.png"
+        },
+        {
+            "name": "box_NPS_passives.png"
         }
     ],
     "edges": [
