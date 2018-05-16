@@ -17,6 +17,9 @@
         },
         {
             "name": "NPS_Pas.png"
+        },
+        {
+            "name": "NPS_Det.png"
         }
     ],
     "edges": [
