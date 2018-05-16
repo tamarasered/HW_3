@@ -25,9 +25,6 @@
             "name": "bar_LTR.png"
         },
         {
-            "name": "bar_NPS_Pas.png"
-        },
-        {
             "name": "bar_NPS_Det.png"
         },
         {
@@ -95,10 +92,6 @@
         {
             "source": "barchart.R",
             "target": "bar_LTR.png"
-        },
-        {
-            "source": "barchart.R",
-            "target": "bar_NPS_Pas.png"
         },
         {
             "source": "barchart.R",
