@@ -37,6 +37,10 @@
         {
             "source": "clean_data.csv",
             "target": "boxplot.R"
+        },
+        {
+            "source": "boxplot.R",
+            "target": "LTR.png"
         }
     ]
 }
