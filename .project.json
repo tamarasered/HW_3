@@ -101,6 +101,10 @@
         {
             "source": "clean_data.csv",
             "target": "scatterplot.R"
+        },
+        {
+            "source": "scatterplot.R",
+            "target": "scat_hc_LTR.png"
         }
     ]
 }
