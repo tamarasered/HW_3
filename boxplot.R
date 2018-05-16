@@ -14,7 +14,7 @@ library(ggplot2)
 # The data.
 myPlot <- ggplot(clean_data)
 # The aesthetic.
-myPlot <- myPlot + aes(x=Likelihood_Recommend_H)
+myPlot <- myPlot + aes(Likelihood_Recommend_H)
 # The geometry.
 myPlot <- myPlot + geom_boxplot(fill="green", col="black")
 # Invoke the plot to draw it. 
