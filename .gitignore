@@ -1,0 +1,4 @@
+.RHistory
+__pycache__
+app.log*
+config.py
