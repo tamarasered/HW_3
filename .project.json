@@ -53,6 +53,9 @@
         },
         {
             "name": "heat_hc_sc.png"
+        },
+        {
+            "name": "map_usa.R"
         }
     ],
     "edges": [
