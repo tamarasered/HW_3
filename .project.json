@@ -59,9 +59,6 @@
         },
         {
             "name": "mean_NPSbystate_color.png"
-        },
-        {
-            "name": "box_NPS_passives.png"
         }
     ],
     "edges": [
@@ -140,10 +137,6 @@
         {
             "source": "barchart.R",
             "target": "mean_NPSbystate_color.png"
-        },
-        {
-            "source": "boxplot.R",
-            "target": "box_NPS_passives.png"
         }
     ]
 }
