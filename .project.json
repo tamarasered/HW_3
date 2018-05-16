@@ -16,9 +16,6 @@
             "name": "box_LTR.png"
         },
         {
-            "name": "box_NPS_Pas.png"
-        },
-        {
             "name": "box_NPS_Det.png"
         },
         {
@@ -89,10 +86,6 @@
         {
             "source": "boxplot.R",
             "target": "box_LTR.png"
-        },
-        {
-            "source": "boxplot.R",
-            "target": "box_NPS_Pas.png"
         },
         {
             "source": "boxplot.R",
