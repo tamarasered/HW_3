@@ -57,7 +57,6 @@ library(dplyr)
 StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Likelihood_Recommend_H)
 
 
-
 #Creating a function of NPS that returns a number
 NPS <- function(LTR) {
   promoters  <- (sum(LTR > 8))/length(LTR)
@@ -80,10 +79,33 @@ NPSmean <- NPSmean[names(NPSmean) %in% stateabb]
 #Creating a dataframe
 NPSmeans <- data.frame(state=(names(NPSmean)), LTR=NPSmean)
 
+#Generating a bar chart
 MeanNPSPlot <- ggplot(NPSmeans, aes(x=state,y=LTR)) + geom_bar(stat="identity") + xlab("states") + ylab("mean NPS")
 
+#Generating PNG file
 png(filename="mean_NPSbystate.png")
 MeanNPSPlot
+dev.off()
+
+#Part G: 2
+
+#Generating a sorted bar chart
+MeanNPSPlotArr <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR)) + geom_bar(stat="identity") + xlab("states") + ylab("mean NPS")
+
+#Generating PNG file
+png(filename="mean_NPSbystate_sorted.png")
+MeanNPSPlotArr
+dev.off()
+
+#Part G: 3
+
+#Generating a sorted and colored bar chart
+MeanNPSPlotArrCol <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR, fill=as.factor(LTR))) + geom_bar(stat="identity", width=0.8, , show.legend=FALSE) + xlab("states") + ylab("mean NPS")
+MeanNPSPlotArrCol <- MeanNPSPlotArrCol + scale_shape_manual(values = 1:length(unique(NPSmeans$state)))
+
+#Generating PNG file
+png(filename="mean_NPSbystate_color.png", width=600, height=600)
+MeanNPSPlotArrCol
 dev.off()
 
 ## end your R code and logic 
