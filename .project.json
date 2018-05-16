@@ -47,6 +47,9 @@
         },
         {
             "name": "scat_hc_sc.png"
+        },
+        {
+            "name": "heatmap.R"
         }
     ],
     "edges": [
