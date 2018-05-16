@@ -22,7 +22,7 @@
             "name": "box_NPS_Det.png"
         },
         {
-            "name": "NPS_Pro.png"
+            "name": "box_NPS_Pro.png"
         }
     ],
     "edges": [
@@ -52,7 +52,7 @@
         },
         {
             "source": "boxplot.R",
-            "target": "NPS_Pro.png"
+            "target": "box_NPS_Pro.png"
         }
     ]
 }
