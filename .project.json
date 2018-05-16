@@ -80,6 +80,10 @@
         {
             "source": "barchart.R",
             "target": "bar_NPS_Pas.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_NPS_Det.png"
         }
     ]
 }
