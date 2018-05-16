@@ -50,6 +50,9 @@
         },
         {
             "name": "heatmap.R"
+        },
+        {
+            "name": "heat_hc_sc.png"
         }
     ],
     "edges": [
