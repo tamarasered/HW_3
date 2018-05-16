@@ -157,6 +157,10 @@
         {
             "source": "barchart.R",
             "target": "mean_NPSbystate.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "mean_NPSbystate_sorted.png"
         }
     ]
 }
