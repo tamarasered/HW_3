@@ -25,7 +25,7 @@
             "name": "bar_LTR.png"
         },
         {
-            "name": "bar_NPS_Det.png"
+            "name": "bar_NPS.png"
         },
         {
             "name": "scatterplot.R"
@@ -92,7 +92,7 @@
         },
         {
             "source": "barchart.R",
-            "target": "bar_NPS_Det.png"
+            "target": "bar_NPS.png"
         },
         {
             "source": "clean_data.csv",
