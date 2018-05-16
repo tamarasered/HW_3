@@ -19,9 +19,6 @@
             "name": "box_NPS_Det.png"
         },
         {
-            "name": "box_NPS_Pro.png"
-        },
-        {
             "name": "barchart.R"
         },
         {
@@ -90,10 +87,6 @@
         {
             "source": "boxplot.R",
             "target": "box_NPS_Det.png"
-        },
-        {
-            "source": "boxplot.R",
-            "target": "box_NPS_Pro.png"
         },
         {
             "source": "clean_data.csv",
