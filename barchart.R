@@ -10,6 +10,7 @@ df <- read.csv('clean_data.csv')
 
 ## start writing your R code from here
 library(ggplot2)
+
 #Part B: 1
 # Creating a vector LTR
 LTR <- df$Likelihood_Recommend_H
@@ -48,6 +49,8 @@ png(filename="bar_LTR.png")
 MeanLTRPlot
 dev.off()
 
+
+#Part G: 1
 
 ## end your R code and logic 
 
