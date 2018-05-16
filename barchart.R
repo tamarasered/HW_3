@@ -82,7 +82,7 @@ NPSmeans <- data.frame(state=(names(NPSmean)), LTR=NPSmean)
 
 MeanNPSPlot <- ggplot(NPSmeans, aes(x=state,y=LTR)) + geom_bar(stat="identity") + xlab("states") + ylab("mean NPS")
 
-png(filename="bar_LTR.png")
+png(filename="mean_NPSbystate.png")
 MeanNPSPlot
 dev.off()
 
