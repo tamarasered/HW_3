@@ -97,6 +97,10 @@
         {
             "source": "barchart.R",
             "target": "bar_NPS_Pro.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "scatterplot.R"
         }
     ]
 }
