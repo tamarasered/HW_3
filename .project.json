@@ -62,6 +62,9 @@
         },
         {
             "name": "map_usa_LTR_FL_TN_VT.png"
+        },
+        {
+            "name": "mean_NPSbystate.png"
         }
     ],
     "edges": [
