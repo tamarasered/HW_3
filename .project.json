@@ -133,6 +133,10 @@
         {
             "source": "clean_data.csv",
             "target": "map_usa.R"
+        },
+        {
+            "source": "map_usa.R",
+            "target": "map_usa_LTR.png"
         }
     ]
 }
