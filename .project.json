@@ -23,6 +23,54 @@
         },
         {
             "name": "box_NPS_Pro.png"
+        },
+        {
+            "name": "barchart.R"
+        },
+        {
+            "name": "bar_LTR.png"
+        },
+        {
+            "name": "bar_NPS_Pas.png"
+        },
+        {
+            "name": "bar_NPS_Det.png"
+        },
+        {
+            "name": "bar_NPS_Pro.png"
+        },
+        {
+            "name": "scatterplot.R"
+        },
+        {
+            "name": "scat_hc_LTR.png"
+        },
+        {
+            "name": "scat_hc_sc.png"
+        },
+        {
+            "name": "heatmap.R"
+        },
+        {
+            "name": "heat_hc_sc.png"
+        },
+        {
+            "name": "map_usa.R"
+        },
+        {
+            "name": "map_usa_LTR.png"
+        },
+        {
+            "name": "map_usa_LTR_FL_TN_VT.png"
+        },
+        {
+            "name": "mean_NPSbystate.png"
+        },
+        {
+            "name": "mean_NPSbystate_sorted.png"
+        },
+        {
+            "name": "mean_NPSbystate_color.png"
         }
     ],
     "edges": [
@@ -53,6 +101,70 @@
         {
             "source": "boxplot.R",
             "target": "box_NPS_Pro.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "barchart.R"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_LTR.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_NPS_Pas.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_NPS_Det.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_NPS_Pro.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "scatterplot.R"
+        },
+        {
+            "source": "scatterplot.R",
+            "target": "scat_hc_LTR.png"
+        },
+        {
+            "source": "scatterplot.R",
+            "target": "scat_hc_sc.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "heatmap.R"
+        },
+        {
+            "source": "heatmap.R",
+            "target": "heat_hc_sc.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "map_usa.R"
+        },
+        {
+            "source": "map_usa.R",
+            "target": "map_usa_LTR.png"
+        },
+        {
+            "source": "map_usa.R",
+            "target": "map_usa_LTR_FL_TN_VT.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "mean_NPSbystate.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "mean_NPSbystate_sorted.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "mean_NPSbystate_color.png"
         }
     ]
 }
