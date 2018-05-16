@@ -16,7 +16,7 @@
             "name": "box_LTR.png"
         },
         {
-            "name": "box_NPS.png"
+            "name": "box_NPS_promoters.png"
         },
         {
             "name": "barchart.R"
@@ -80,7 +80,7 @@
         },
         {
             "source": "boxplot.R",
-            "target": "box_NPS.png"
+            "target": "box_NPS_promoters.png"
         },
         {
             "source": "clean_data.csv",
