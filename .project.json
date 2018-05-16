@@ -44,6 +44,9 @@
         },
         {
             "name": "scat_hc_LTR.png"
+        },
+        {
+            "name": "scat_hc_sc.png"
         }
     ],
     "edges": [
