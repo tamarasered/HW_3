@@ -41,6 +41,9 @@
         },
         {
             "name": "scatterplot.R"
+        },
+        {
+            "name": "scat_hc_LTR.png"
         }
     ],
     "edges": [
