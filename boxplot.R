@@ -30,8 +30,9 @@ dev.off()
 
 ####################################
 ##### write output file ############
-# add your R code to write NPS_Pro.png
+# add your R code to write box_NPS_passives.png
 ####################################
+
 
 
 
