@@ -68,15 +68,14 @@ lonlat$meanLTR <- c(cityData$LTR[as.character(cityData$city) == 'Burlington'],
                     cityData$LTR[as.character(cityData$city) == 'Orlando'],
                     cityData$LTR[as.character(cityData$city) == 'Nashville'])
 
-# Adding the points to the previous map.
-map_usa_LTR_FL_TN_V <- map_usa_LTR +
+map_usa_LTR <- map_usa_LTR +
   geom_point(data=lonlat, aes(x=lon, y=lat, color=meanLTR, size=meanLTR)) +
   scale_colour_gradient(low = 'black', high='red')
-map_usa_LTR_FL_TN_V
+map_usa_LTR
 
 # Creating png for the map.
 png(filename="map_usa_LTR_FL_TN_VT.png")
-map_usa_LTR_FL_TN_V
+map_usa_LTR
 dev.off()
 
 ## end your R code and logic 
