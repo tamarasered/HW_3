@@ -19,7 +19,7 @@
             "name": "box_NPS_Pas.png"
         },
         {
-            "name": "NPS_Det.png"
+            "name": "box_NPS_Det.png"
         },
         {
             "name": "NPS_Pro.png"
@@ -48,7 +48,7 @@
         },
         {
             "source": "boxplot.R",
-            "target": "NPS_Det.png"
+            "target": "box_NPS_Det.png"
         },
         {
             "source": "boxplot.R",
