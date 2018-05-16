@@ -25,7 +25,7 @@ myPlotHeat <- myPlotHeat + aes(x=new_clean_data2$Condition_Hotel_H, y=new_clean_
               scale_fill_gradient(low="white", high="blue")
 myPlotHeat
 #Creating the png file of the heatmap
-png(filename="heat_hc-sc.png")
+png(filename="heat_hc_sc.png")
 myPlotHeat
 dev.off()
 
