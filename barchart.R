@@ -14,8 +14,9 @@ df <- read.csv('clean_data.csv')
 
 ####################################
 ##### write output file ############
-# add your R code to write bar_NPS_Pro.png
+# add your R code to write mean_NPSbystate.png
 ####################################
+
 
 
 
