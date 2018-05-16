@@ -14,7 +14,8 @@ df <- read.csv('clean_data.csv')
 
 ####################################
 ##### write output file ############
-# add your R code to write output file
+# add your R code to write heat_hc_sc.png
 ####################################
+
 
 
