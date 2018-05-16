@@ -31,6 +31,24 @@ png(filename="bar_NPS.png")
 MyPlot
 dev.off()
 
+
+
+#Part B: 2
+#Creating a new dataframe by omitting NAs from 'hotel condition' column
+hc <- df[!is.na(df$Condition_Hotel_H),] 
+
+#Getting mean values of LTR for each value of the 'hotel condition' and storing in a new dataframe
+meanLTR <- aggregate(.~Condition_Hotel_H, data=hc, mean)
+
+#Generating a bar chart
+MeanLTRPlot <- ggplot() + geom_bar(aes(x=meanLTR$Condition_Hotel_H,y=meanLTR$Likelihood_Recommend_H), stat="identity") + xlab("hotel condition") + ylab("LTR")
+
+#Generating PNG file
+png(filename="bar_LTR.png")
+MeanLTRPlot
+dev.off()
+
+
 ## end your R code and logic 
 
 ####################################
