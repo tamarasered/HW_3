@@ -129,6 +129,10 @@
         {
             "source": "heatmap.R",
             "target": "heat_hc_sc.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "map_usa.R"
         }
     ]
 }
