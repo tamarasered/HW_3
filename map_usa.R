@@ -40,7 +40,8 @@ us <- map_data("state")
 us$meanLTR <- aggregateState$meanLTR[match(us$region,aggregateState$state)]
 
 map_usa_LTR <- ggplot(data = us) + 
-  geom_polygon(aes(x = long, y = lat, fill=meanLTR, group = group), col = "white")
+  geom_polygon(aes(x = long, y = lat, fill=meanLTR, group = group), col = "black") +
+  scale_fill_gradient(low="white", high="green")
 
 map_usa_LTR
 
