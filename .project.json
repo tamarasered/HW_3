@@ -28,9 +28,6 @@
             "name": "bar_NPS_Det.png"
         },
         {
-            "name": "bar_NPS_Pro.png"
-        },
-        {
             "name": "scatterplot.R"
         },
         {
@@ -96,10 +93,6 @@
         {
             "source": "barchart.R",
             "target": "bar_NPS_Det.png"
-        },
-        {
-            "source": "barchart.R",
-            "target": "bar_NPS_Pro.png"
         },
         {
             "source": "clean_data.csv",
