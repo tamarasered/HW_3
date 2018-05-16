@@ -14,8 +14,9 @@ df <- read.csv('clean_data.csv')
 
 ####################################
 ##### write output file ############
-# add your R code to write bar_LTR.png
+# add your R code to write bar_NPS_Pas.png
 ####################################
+
 
 
 
