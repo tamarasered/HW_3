@@ -51,6 +51,40 @@ dev.off()
 
 
 #Part G: 1
+library(dplyr)
+
+#Filtering the dataframe 
+StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Likelihood_Recommend_H)
+
+
+
+#Creating a function of NPS that returns a number
+NPS <- function(LTR) {
+  promoters  <- (sum(LTR > 8))/length(LTR)
+  detractors <- (sum(LTR < 7))/length(LTR)
+  nps <- promoters-detractors 
+  return(nps)
+}
+
+#Creating a vector with all states
+stateabb<- c('AL', 'AK', 'AZ', 'AR','CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA',
+  'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH','OK',
+  'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY', 'DC')
+
+#Calculating mean NPS for each state
+NPSmean <- tapply(StateDF$Likelihood_Recommend_H, StateDF$STATE_R, NPS)
+
+#Filtering the states
+NPSmean <- NPSmean[names(NPSmean) %in% stateabb]
+
+#Creating a dataframe
+NPSmeans <- data.frame(state=(names(NPSmean)), LTR=NPSmean)
+
+MeanNPSPlot <- ggplot(NPSmeans, aes(x=state,y=LTR)) + geom_bar(stat="identity") + xlab("states") + ylab("mean NPS")
+
+png(filename="mean_NPSbystate.png")
+MeanNPSPlot
+dev.off()
 
 ## end your R code and logic 
 
