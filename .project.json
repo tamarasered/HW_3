@@ -140,6 +140,10 @@
         {
             "source": "map_usa.R",
             "target": "map_usa_LTR.png"
+        },
+        {
+            "source": "map_usa.R",
+            "target": "map_usa_LTR_FL_TN_VT.png"
         }
     ]
 }
