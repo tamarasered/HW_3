@@ -26,6 +26,9 @@
         },
         {
             "name": "barchart.R"
+        },
+        {
+            "name": "bar_LTR.png"
         }
     ],
     "edges": [
