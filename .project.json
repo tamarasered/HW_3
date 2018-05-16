@@ -13,7 +13,7 @@
             "name": "boxplot.R"
         },
         {
-            "name": "LTR.png"
+            "name": "box_LTR.png"
         },
         {
             "name": "NPS_Pas.png"
@@ -40,7 +40,7 @@
         },
         {
             "source": "boxplot.R",
-            "target": "LTR.png"
+            "target": "box_LTR.png"
         },
         {
             "source": "boxplot.R",
