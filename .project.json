@@ -84,6 +84,10 @@
         {
             "source": "barchart.R",
             "target": "bar_NPS_Det.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_NPS_Pro.png"
         }
     ]
 }
