@@ -16,10 +16,13 @@ myPlot <- ggplot(clean_data)
 # The aesthetic.
 myPlot <- myPlot + aes(x=clean_data$Likelihood_Recommend_H, y=clean_data$Likelihood_Recommend_H)
 # The geometry.
-myPlot <- myPlot + geom_boxplot(fill="green", col="black")
+myPlot <- myPlot + geom_boxplot(fill="yellow", col="black")
 # Invoke the plot to draw it. 
 myPlot
-
+#Creating the png file of the boxplot.
+png(filename="box_LTR.png")
+myPlot
+dev.off()
 
 # PART A.2: Generate a boxplot for each NPS Type. 
 # Create a new data frame with 
