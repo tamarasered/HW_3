@@ -29,6 +29,9 @@
         },
         {
             "name": "bar_LTR.png"
+        },
+        {
+            "name": "bar_NPS_Pas.png"
         }
     ],
     "edges": [
