@@ -41,6 +41,10 @@
         {
             "source": "boxplot.R",
             "target": "LTR.png"
+        },
+        {
+            "source": "boxplot.R",
+            "target": "NPS_Pas.png"
         }
     ]
 }
