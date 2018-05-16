@@ -45,6 +45,10 @@
         {
             "source": "boxplot.R",
             "target": "NPS_Pas.png"
+        },
+        {
+            "source": "boxplot.R",
+            "target": "NPS_Det.png"
         }
     ]
 }
