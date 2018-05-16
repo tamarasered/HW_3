@@ -68,6 +68,9 @@
         },
         {
             "name": "mean_NPSbystate_sorted.png"
+        },
+        {
+            "name": "mean_NPSbystate_color.png"
         }
     ],
     "edges": [
