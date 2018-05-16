@@ -10,6 +10,21 @@ df <- read.csv('clean_data.csv')
 
 ## start writing your R code from here
 
+#Part B: 1
+# Creating a vector LTR
+LTR <- df$Likelihood_Recommend_H
+
+#Creating types of NPS
+promoters <- (sum(LTR > 8))/length(LTR)
+passives <- (sum(LTR > 6 & LTR<9))/length(LTR)
+detractors <- (sum(LTR < 7))/length(LTR)
+LTR
+Type<- 
+
+png(filename="hist_NPS10.png")
+hist(AVG)
+dev.off()
+
 ## end your R code and logic 
 
 ####################################
