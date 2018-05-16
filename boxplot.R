@@ -14,8 +14,9 @@ df <- read.csv('clean_data.csv')
 
 ####################################
 ##### write output file ############
-# add your R code to write NPS_Det.png
+# add your R code to write NPS_Pro.png
 ####################################
+
 
 
 
