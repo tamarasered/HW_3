@@ -68,6 +68,10 @@
         {
             "source": "boxplot.R",
             "target": "box_NPS_Pro.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "barchart.R"
         }
     ]
 }
