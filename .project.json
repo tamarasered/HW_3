@@ -115,6 +115,10 @@
         {
             "source": "scatterplot.R",
             "target": "scat_hc_sc.png"
+        },
+        {
+            "source": "clean_data.csv",
+            "target": "heatmap.R"
         }
     ]
 }
