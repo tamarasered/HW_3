@@ -76,6 +76,10 @@
         {
             "source": "barchart.R",
             "target": "bar_LTR.png"
+        },
+        {
+            "source": "barchart.R",
+            "target": "bar_NPS_Pas.png"
         }
     ]
 }
