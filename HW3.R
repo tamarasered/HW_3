@@ -56,7 +56,7 @@ dev.off()
 # Part C.1: Generate a scatterplot (x for hotel condition, y for LTR).
 
 #First, we need to clean the data for hotel condition (as for not it is only cleaned for LTR).
-hotel <- df[!is.na(clean_data$Condition_Hotel_H),] 
+hotel <- df[!is.na(df$Condition_Hotel_H),] 
 
 #Having both x and y of the scatterplot clean, we can proceed with plotting it.
 library(ggplot2)
