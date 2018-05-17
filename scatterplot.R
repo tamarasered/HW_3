@@ -30,7 +30,7 @@ dev.off()
 # Have the size and color be represented by LTR.
 
 #First we need to clean the data for staff care (as for not it is only cleaned for LTR and hotel condition).
-hotel2 <- hotel[!is.na(new_clean_data$Staff_Cared_H),] 
+hotel2 <- hotel[!is.na(hotel$Staff_Cared_H),] 
 
 # Having both x and y of the scatterplot clean, we can proceed with plotting it.
 myPlot2 <- ggplot(hotel2, aes(x=Condition_Hotel_H, y=Staff_Cared_H))
