@@ -9,6 +9,7 @@ df <- read.csv('clean_data.csv')
 ####################################
 
 ## start writing your R code from here
+
 # Part E:Generate a Map of the USA, where the color of the state represents the average LTR for people from that state.
 
 # First we need to have data with only USA information. For that we need to 
