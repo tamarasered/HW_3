@@ -43,6 +43,7 @@ meanLTR <- aggregate(.~Condition_Hotel_H, data=hc, mean)
 
 #Generating a bar chart
 MeanLTRPlot <- ggplot() + geom_bar(aes(x=meanLTR$Condition_Hotel_H,y=meanLTR$Likelihood_Recommend_H), stat="identity") + xlab("hotel condition") + ylab("LTR")
+MeanLTRPlot <- MeanLTRPlot + scale_x_continuous( breaks = 1:10)+ scale_y_continuous( breaks = 1:10)
 
 #Generating PNG file
 png(filename="bar_LTR.png")
