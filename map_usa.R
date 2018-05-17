@@ -46,7 +46,7 @@ USmap<- USmap + scale_fill_gradient(low = "lightgreen",high = "darkgreen", break
 
 
 # Creating png for the map.
-png(filename="map_usa_LTR.png")
+png(filename="map_usa_LTR.png", width=800, height=600)
 USmap
 dev.off()
 
@@ -77,7 +77,7 @@ USmap2<- USmap2 + scale_radius(aes(size=point$LTR))
 
 
 # Creating png for the map.
-png(filename="map_usa_LTR_FL_TN_VT.png")
+png(filename="map_usa_LTR_FL_TN_VT.png", width=800, height=600)
 USmap2
 dev.off()
 
