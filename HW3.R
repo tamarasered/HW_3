@@ -100,8 +100,15 @@ dev.off()
 # size based on the average LTR for the hotels in that city.Have the color of 
 # the points range from black to red (using scale_colour_gradient).
 
+lonlat  <- geocode(c('burlington vermont', 'orlando florida', 'nashville tennessee'))
+threestates <- c("VT", "FL", "TN") 
+lonlat$LTR <- c(LTRmeans$LTR[match(threestates,LTRmeans$state)])
+statename<- c("vermont", "florida", "tennessee")
+USmap2 <- USmap + geom_point(data=lonlat, aes(x=lon, y=lat, size=LTR, color=LTR)) + scale_colour_gradient(low = 'black', high='red')
 
+USmap2
 
+state.name
 
 
 ##################################################
