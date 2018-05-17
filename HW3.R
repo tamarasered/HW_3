@@ -11,8 +11,6 @@ df <- read.csv('clean_data.csv')
 ## start writing your R code from here
 library(ggplot2)
 
-
-
 # PART A.1: Generate a boxplot of LTR, which is already cleaned.
 
 # Creating a box plot
