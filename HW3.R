@@ -9,20 +9,24 @@ df <- read.csv('clean_data.csv')
 ####################################
 
 ## start writing your R code from here
+library(dplyr)
 library(ggplot2)
+library(ggmap)
+
+##################################################
 
 # PART A.1: Generate a boxplot of LTR, which is already cleaned.
 
 # Creating a box plot
-myPlot <- ggplot(df, aes(x=Likelihood_Recommend_H, y=Likelihood_Recommend_H)) + geom_boxplot(fill="yellow", col="black")
-myPlot <- myPlot + scale_x_continuous( breaks = 1:10)+ scale_y_continuous( breaks = 1:10)
+myboxPlot <- ggplot(df, aes(x=Likelihood_Recommend_H, y=Likelihood_Recommend_H)) + geom_boxplot(fill="yellow", col="black")
+myboxPlot <- myboxPlot + scale_x_continuous( breaks = 1:10)+ scale_y_continuous( breaks = 1:10)
 
 # Invoke the plot to draw it. 
-myPlot
+myboxPlot
 
 #Creating the png file of the boxplot.
 png(filename="box_LTR.png")
-myPlot
+myboxPlot
 dev.off()
 
 
@@ -94,7 +98,6 @@ dev.off()
 hotel <- df[!is.na(df$Condition_Hotel_H),] 
 
 #Having both x and y of the scatterplot clean, we can proceed with plotting it.
-library(ggplot2)
 myPlot <- ggplot(hotel, aes(x=Condition_Hotel_H, y=Likelihood_Recommend_H))
 myPlot <- myPlot + geom_point() + geom_jitter(alpha=0.3, position=position_jitter(width=0.3, height=0.3))
 myPlot <- myPlot + scale_x_continuous( breaks = 1:10)+ scale_y_continuous( breaks = 1:10)
@@ -128,8 +131,6 @@ dev.off()
 # Part D: Generate a heatmap (x for hotel condition, y for staff care)
 # Have the colors range from white to blue
 
-library(ggplot2)
-
 # #First, we need to clean the data for hotel condition and staff care (as for not it is only cleaned for LTR). 
 heat <- df[!is.na(df$Condition_Hotel_H),] 
 heat <- heat[!is.na(heat$Staff_Cared_H),] 
@@ -154,9 +155,7 @@ dev.off()
 # keep only those rows where GUEST_COUNTRY_R is UNITED STATES.
 
 #Calling the libraries
-library(dplyr)
-library(ggplot2)
-library(ggmap)
+
 
 #Filtering the dataframe by "United States"
 StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Likelihood_Recommend_H)
@@ -225,7 +224,6 @@ dev.off()
 ##################################################
 
 #Part G: 1
-library(dplyr)
 
 #Filtering the dataframe by "United States"
 StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Likelihood_Recommend_H)
