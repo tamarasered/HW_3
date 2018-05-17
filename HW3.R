@@ -70,7 +70,7 @@ StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Li
 LTRmean <- tapply(StateDF$Likelihood_Recommend_H, StateDF$STATE_R, mean)
 
 #Filtering the vector by 50 states
-LTRmean <- NPSmean[names(NPSmean) %in% state.abb]
+LTRmean <- LTRmean[names(NPSmean) %in% state.abb]
 
 #Creating a dataframe of 50 states and mean NPS
 LTRmeans <- data.frame(state=(names(LTRmean)), LTR=LTRmean)
@@ -100,15 +100,29 @@ dev.off()
 # size based on the average LTR for the hotels in that city.Have the color of 
 # the points range from black to red (using scale_colour_gradient).
 
-lonlat  <- geocode(c('burlington vermont', 'orlando florida', 'nashville tennessee'))
+#Getting coordinates for three cities and creating a new dataframe
+point  <- geocode(c('burlington vermont', 'orlando florida', 'nashville tennessee'))
+
+#Creating a vector for three cities
 threestates <- c("VT", "FL", "TN") 
-lonlat$LTR <- c(LTRmeans$LTR[match(threestates,LTRmeans$state)])
+
+#adding mean LTR to the dataframe point
+point$LTR <- c(LTRmeans$LTR[match(threestates,LTRmeans$state)])
+
+#Creating a vector for three states with state names to draw coordinates
 statename<- c("vermont", "florida", "tennessee")
-USmap2 <- USmap + geom_point(data=lonlat, aes(x=lon, y=lat, size=LTR, color=LTR)) + scale_colour_gradient(low = 'black', high='red')
 
+#Adding a layer with points
+USmap2 <- USmap + geom_point(data=point, aes(x=lon, y=lat, color=LTR)) + scale_colour_gradient(low = 'black', high='red')
+
+#Scaling points by radius
+USmap2<- USmap2 + scale_radius(aes(size=point$LTR))
+
+
+# Creating png for the map.
+png(filename="map_usa_LTR_FL_TN_VT.png")
 USmap2
-
-state.name
+dev.off()
 
 
 ##################################################
