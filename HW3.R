@@ -51,6 +51,33 @@ dev.off()
 
 
 
+
+
+
+
+
+
+# Part D: Generate a heatmap (x for hotel condition, y for staff care)
+# Have the colors range from white to blue
+
+library(ggplot2)
+
+# #First, we need to clean the data for hotel condition and staff care (as for not it is only cleaned for LTR). 
+heat <- df[!is.na(df$Condition_Hotel_H),] 
+heat <- heat[!is.na(heat$Staff_Cared_H),] 
+
+#Now we can proceed with generating a heatmap where we take x for hotel condition, y for staff care.
+#Colors range from white to blue depending on fil value of LTR.
+myPlotHeat <- ggplot(heat, aes(x=Condition_Hotel_H, y=Staff_Cared_H, fill=Likelihood_Recommend_H)) + geom_tile(color = "white") 
+myPlotHeat <- myPlotHeat + scale_fill_gradient(low="white", high="blue", space = "Lab", name="LTR") + xlab("Hotel condition") + ylab("Staff care")
+myPlotHeat <- myPlotHeat + coord_fixed() + theme_minimal() + scale_x_continuous( breaks = 1:10)+ scale_y_continuous( breaks = 1:10)
+
+#Creating the png file of the heatmap
+png(filename="heat_hc_sc.png")
+myPlotHeat
+dev.off()
+
+
 ##################################################
 
 # Part E:Generate a Map of the USA, where the color of the state represents the average LTR for people from that state.
@@ -162,6 +189,8 @@ png(filename="mean_NPSbystate.png", width=800, height=600)
 MeanNPSPlot
 dev.off()
 
+
+
 #Part G: 2
 
 #Generating a sorted bar chart
@@ -171,6 +200,8 @@ MeanNPSPlotArr <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR)) + geom_bar(
 png(filename="mean_NPSbystate_sorted.png", width=800, height=600)
 MeanNPSPlotArr
 dev.off()
+
+
 
 #Part G: 3
 
@@ -182,11 +213,6 @@ MeanNPSPlotArrCol <- MeanNPSPlotArrCol + scale_shape_manual(values = 0:length(un
 png(filename="mean_NPSbystate_color.png", width=800, height=600)
 MeanNPSPlotArrCol
 dev.off()
-
-
-
-
-
 
 
 

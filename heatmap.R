@@ -13,17 +13,18 @@ clean_data <- read.csv('clean_data.csv')
 # Have the colors range from white to blue
 # Hint: use ‘scale_fill_gradient’
 
+library(ggplot2)
+
 # #First, we need to clean the data for hotel condition and staff care (as for not it is only cleaned for LTR). 
-new_clean_data <- clean_data [!is.na(clean_data$Condition_Hotel_H),] 
-new_clean_data2 <- new_clean_data [!is.na(new_clean_data$Staff_Cared_H),] 
+heat <- clean_data[!is.na(clean_data$Condition_Hotel_H),] 
+heat <- heat[!is.na(heat$Staff_Cared_H),] 
+
 #Now we can proceed with generating a heatmap where we take x for hotel condition, y for staff care.
 #Colors range from white to blue depending on fil value of LTR.
-library(ggplot2)
-myPlotHeat <- ggplot(new_clean_data2)
-myPlotHeat <- myPlotHeat + aes(x=new_clean_data2$Condition_Hotel_H, y=new_clean_data2$Staff_Cared_H) + 
-              geom_tile(aes(fill=new_clean_data2$Likelihood_Recommend_H)) +
-              scale_fill_gradient(low="white", high="blue")
-myPlotHeat
+myPlotHeat <- ggplot(heat, aes(x=Condition_Hotel_H, y=Staff_Cared_H, fill=Likelihood_Recommend_H)) + geom_tile(color = "white") 
+myPlotHeat <- myPlotHeat + scale_fill_gradient(low="white", high="blue", space = "Lab", name="LTR") + xlab("Hotel condition") + ylab("Staff care")
+myPlotHeat <- myPlotHeat + coord_fixed() + theme_minimal() + scale_x_continuous( breaks = 1:10)+ scale_y_continuous( breaks = 1:10)
+
 #Creating the png file of the heatmap
 png(filename="heat_hc_sc.png")
 myPlotHeat
