@@ -54,7 +54,7 @@ dev.off()
 #Part G: 1
 library(dplyr)
 
-#Filtering the dataframe 
+#Filtering the dataframe by "United States"
 StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Likelihood_Recommend_H)
 
 
@@ -62,22 +62,18 @@ StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Li
 NPS <- function(LTR) {
   promoters  <- (sum(LTR > 8))/length(LTR)
   detractors <- (sum(LTR < 7))/length(LTR)
-  nps <- promoters-detractors 
+  nps <- (promoters-detractors)*100 
   return(nps)
 }
 
-#Creating a vector with all states
-stateabb<- c('AL', 'AK', 'AZ', 'AR','CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA',
-  'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH','OK',
-  'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY', 'DC')
 
 #Calculating mean NPS for each state
 NPSmean <- tapply(StateDF$Likelihood_Recommend_H, StateDF$STATE_R, NPS)
 
-#Filtering the states
-NPSmean <- NPSmean[names(NPSmean) %in% stateabb]
+#Filtering the vector by 50 states
+NPSmean <- NPSmean[names(NPSmean) %in% state.abb]
 
-#Creating a dataframe
+#Creating a dataframe of 50 states and mean NPS
 NPSmeans <- data.frame(state=(names(NPSmean)), LTR=NPSmean)
 
 #Generating a bar chart
@@ -93,7 +89,7 @@ dev.off()
 #Generating a sorted bar chart
 MeanNPSPlotArr <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR)) + geom_bar(stat="identity", width=0.8) + xlab("states") + ylab("mean NPS")
 
-#Generating PNG file
+#Generating sorted PNG file
 png(filename="mean_NPSbystate_sorted.png", width=800, height=600)
 MeanNPSPlotArr
 dev.off()
@@ -104,7 +100,7 @@ dev.off()
 MeanNPSPlotArrCol <- ggplot(NPSmeans, aes(x=reorder(state, LTR),y=LTR, fill=as.factor(LTR))) + geom_bar(stat="identity", width=0.8, show.legend=FALSE) + xlab("states") + ylab("mean NPS")
 MeanNPSPlotArrCol <- MeanNPSPlotArrCol + scale_shape_manual(values = 0:length(unique(NPSmeans$state)))
 
-#Generating PNG file
+#Generating sorted and colored PNG file
 png(filename="mean_NPSbystate_color.png", width=800, height=600)
 MeanNPSPlotArrCol
 dev.off()
