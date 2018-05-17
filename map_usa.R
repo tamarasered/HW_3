@@ -26,7 +26,7 @@ StateDF<- df %>% filter(GUEST_COUNTRY_R=="UNITED STATES") %>% select(STATE_R, Li
 LTRmean <- tapply(StateDF$Likelihood_Recommend_H, StateDF$STATE_R, mean)
 
 #Filtering the vector by 50 states
-LTRmean <- NPSmean[names(NPSmean) %in% state.abb]
+LTRmean <- LTRmean[names(NPSmean) %in% state.abb]
 
 #Creating a dataframe of 50 states and mean NPS
 LTRmeans <- data.frame(state=(names(LTRmean)), LTR=LTRmean)
