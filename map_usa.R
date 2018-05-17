@@ -57,7 +57,7 @@ dev.off()
 # the points range from black to red (using scale_colour_gradient).
 
 #Getting coordinates for three cities and creating a new dataframe
-point  <- geocode(c('burlington vermont', 'orlando florida', 'nashville tennessee'))
+point  <- geocode(c("burlington, vt", "orlando, fl", "nashville, tn"))
 
 #Creating a vector for three cities
 threestates <- c("VT", "FL", "TN") 
